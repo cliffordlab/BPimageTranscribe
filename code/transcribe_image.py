@@ -38,7 +38,7 @@ if not os.path.exists(lcd_data):
     os.mkdir(lcd_data)
 
 #Load CNN model trained on data pre-defined in the paper
-model=load_model(root + 'Dataset/best_model.h5')
+model=load_model('../Dataset/best_model.h5')
 
 # Preprocess all images in test_data folder into binarized single monitor lcd_data with a label file
 get_lcd(data, results)
