@@ -37,7 +37,6 @@ if not os.path.exists(lcd_data):
 model=load_model('../Dataset/best_model.h5')
 
 # Preprocess all images in test_data folder into binarized single monitor lcd_data with a label file
-get_lcd(data, results)
 frame_labels = pd.DataFrame(columns = ['filename'])
 for fname in glob.glob(data +'*.jpg'):
     preprocessed_img = get_lcd(fname)
