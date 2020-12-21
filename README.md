@@ -29,7 +29,7 @@ cd code/
  
 ## Training
 
-To generate the training dataset as well as saved the best CNN transcription model trained on them as described in the paper, you will need to input the source images' drectory location containing the input images(.jpg) and a labels(.csv) file saving its ground truth labels for numerical value & quality. As discussed in the paper, the source images will be released eventually, but presently cannot be released unless every single one is checked for protected health information and redactions performed. This includes dates on the devices, reflections of people’s faces, fingerprints on screens, fingers in shot, etc. Even in ‘clean’ data there are often some such personal information. 
+To generate the training dataset as well as saved the best CNN transcription model trained on them as described in the paper, you will need to input the source images' drectory location containing the input images(.jpg) and a labels(.csv) file saving its ground truth labels for numerical value & quality. As discussed in the paper, the source images will be released eventually, but presently cannot be released unless every single one is checked for protected health information and redactions performed. This includes dates on the devices, reflections of people’s faces, fingerprints on screens, fingers in shot, etc. Even in ‘clean’ data there are often some such personal information. Hence the Dataset folder currently only contains the pre-trained CNN model.
 
 - Input: 
     1. Dataset/data/: Folder consisting of input RGB BP meter images
@@ -45,13 +45,13 @@ This will generate intermediate output folder to save binary thresholded single 
     1. Dataset/training_data/frames_BP/ : Folder to save preprocessed binary thresholded single monitor frames as training data 
     2. Dataset/training_data/frame_labels.csv: File(.csv) saving LCD numerical and quality data for each single monitor frame
 
-On completion, it will save the best trained CNN model (Dataset/best_model.h5) as well as model performance plots(.png)(Dataset/training_data/)
+On completion, it will save the best trained CNN model :[Dataset/best_model.h5](Dataset/best_model.h5) as well as model performance plots(.png)(Dataset/training_data/)
 
 ## Pre-trained Models
 
 You can find the pretrained model described in the paper here:
 
-- [Image_Digitization model]() : Trained on 5022 single monitor binary images and validated on 1677 single monitor binary images. 
+- [Image_Digitization model](Dataset/best_model.h5) : Trained on 5022 single monitor binary images and validated on 1677 single monitor binary images. 
 
 ## Testing
 The trained model can be used to transcribe a held-out set of BP meter images of varying quality under test. A sample set of similar images is provided [here](Test_case/test_data/). Using the transcribe_image.py, run this command:
@@ -68,5 +68,5 @@ Below table shows comparison of performance of our model with popular and public
 
 ## Contributors
 1. [Samruddhi Kulkarni](https://github.com/skulkarni307)
-2. [Nasim Katebi]()
+2. [Nasim Katebi]((https://github.com/nkatebi)
 3. [Gari Clifford, DPhil](https://github.com/gariclifford)
