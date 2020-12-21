@@ -1,11 +1,9 @@
 """
 Model class: Convolutional neural network description
 Functions:
-    1. __init__() : Contains locations of folders for "training data", "ground truth labels" and "model name" to save the model
-    2. convert_to_arrays(): Resizes and converts input image to array
-    3. data_init(): Initializes training and test data(X(Input arrays) and y(labels)) to be fed to model
-    4. model_init(): Defines the model architecture
-    5. train_predict(): Trains model and estimates labels on validation data
+    1. __init__() : Contains image arrays and ground truth labels for training(X_train, y_train) and validation data(X_val, y_val) and "model name" to save the model
+    2. model_init(): Defines the model architecture
+    3. train_predict(): Trains model and estimates labels on validation data
         1. train(): Train and saves the model. 
         2. plot_loss(): Saves plots on digit-by-digit and overall validation and training loss
         3. plot_acc(): Saves plots on overall validation and training accuracy
@@ -17,7 +15,6 @@ Functions:
 """
 import numpy as np
 import pandas as pd
-from PIL import Image
 from keras.models import Model
 from keras.layers import Input, Dense, Conv2D, MaxPooling2D, Flatten
 from keras.layers.core import Dropout, Activation
