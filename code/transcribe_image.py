@@ -4,17 +4,13 @@
 
 Main script performing serial operations to transcribe a test image into numerical values as under:
 
-1. Run gen_lcd.py to preprocess & extract LCD single monitor lcd_data from images under test
-2. Run get_readings_test.py to get numerical value from preprocessed test image
-
-
 @author: skulk26 
 """
 import os
 from keras.models import load_model
 import numpy as np
 import pandas as pd
-from helper_functions import imgs_to_array
+from helper_functions import imgs_to_array, get_lcd
 import glob
 """
 Directory structure:
@@ -60,7 +56,7 @@ print("Single monitor lcd_data and label files created!")
 
 
 #Transcription of all images in test folder
-X_test = img_to_arrays(lcd_data.filename[:], lcd_data)
+X_test = imgs_to_array(lcd_data.filename[:], lcd_data)
 y_pred = model.predict(X_test)
 
 # Create test_data_predictions.csv file to save Systolic and Diastolic BP values for every test image
