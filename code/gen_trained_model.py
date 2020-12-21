@@ -1,11 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-File to generate a CNN model trained on images defined in the study. Steps involve
-1. Run gen_lcd.py to preprocess & extract binary thresholded LCD single monitor frames from input images
-2. Run Model.py to train a CNN model on these frames and save the model to folder
-
-
+File to preprocess input images into training dataset and generate a CNN model trained on images defined in the study. 
 Input: 
     1. Dataset/data/: Folder consisting of input RGB BP meter images
     2. Dataset/labels.csv: File storing LCD numerical and quality data for each image (Format: filename | SBP | DBP | quality)
