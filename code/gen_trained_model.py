@@ -10,10 +10,10 @@ Input:
     1. Dataset/data/: Folder consisting of input RGB BP meter images
     2. Dataset/labels.csv: File storing LCD numerical and quality data for each image (Format: filename | SBP | DBP | quality)
 Intermediary Output:
-    1. results/frames_BP/ : Folder to save preprocessed binary thresholded single monitor frames as training data 
-    2. results/frame_labels.csv: File(.csv) saving LCD numerical and quality data for each single monitor frame
+    1. Dataset/training_data/frames_BP/ : Folder to save preprocessed binary thresholded single monitor frames as training data 
+    2. Dataset/training_data/frame_labels.csv: File(.csv) saving LCD numerical and quality data for each single monitor frame
 
-Output: CNN model saved as Dataset/
+Output: CNN model saved as Dataset/training_data/best_model.h5
 
 @author: skulk26
 """
