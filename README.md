@@ -45,7 +45,7 @@ This will generate intermediate output folder to save binary thresholded single 
     1. Dataset/training_data/frames_BP/ : Folder to save preprocessed binary thresholded single monitor frames as training data 
     2. Dataset/training_data/frame_labels.csv: File(.csv) saving LCD numerical and quality data for each single monitor frame
 
-On completion, it will save the best trained CNN model (Dataset/best_model.h5) as well as model performance plots(.png) in the Dataset/training_data/
+On completion, it will save the best trained CNN model (Dataset/best_model.h5) as well as model performance plots(.png)(Dataset/training_data/)
 
 ## Pre-trained Models
 
