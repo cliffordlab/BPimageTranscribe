@@ -29,19 +29,22 @@ cd code/
  
 ## Training
 
-To generate the training dataset as well as saved the best CNN transcription model trained on them as described in the paper, you will need to input the drectory location containing the input images(.jpg) and a labels(.csv) file saving its ground truth labels for numerical value & quality.
-Input: 
+To generate the training dataset as well as saved the best CNN transcription model trained on them as described in the paper, you will need to input the source images' drectory location containing the input images(.jpg) and a labels(.csv) file saving its ground truth labels for numerical value & quality. As discussed in the paper, the source images will be released eventually, but presently cannot be released unless every single one is checked for protected health information and redactions performed. This includes dates on the devices, reflections of people’s faces, fingerprints on screens, fingers in shot, etc. Even in ‘clean’ data there are often some such personal information. 
+
+- Input: 
     1. Dataset/data/: Folder consisting of input RGB BP meter images
     2. Dataset/labels.csv: File storing LCD numerical and quality data for each image (Format: filename | SBP | DBP | quality)
+
 Once provided, run this command:
 
 ```train
 python3 gen_trained_model.py
 ```
 This will generate intermediate output folder to save binary thresholded single monitor frames(.jpg) and its corresponding ground truth labels(.csv) file. Using this files, 
-Intermediary Output:
+- Intermediary Output:
     1. Dataset/training_data/frames_BP/ : Folder to save preprocessed binary thresholded single monitor frames as training data 
     2. Dataset/training_data/frame_labels.csv: File(.csv) saving LCD numerical and quality data for each single monitor frame
+
 On completion, it will save the best trained CNN model (Dataset/training_data/best_model.h5) as well as model performance plots(.png) in the Dataset/training_data/
 
 ## Pre-trained Models
