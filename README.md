@@ -68,5 +68,5 @@ Below table shows comparison of performance of our model with popular and public
 
 ## Contributors
 1. [Samruddhi Kulkarni](https://github.com/skulkarni307)
-2. [Nasim Katebi]((https://github.com/nkatebi)
+2. [Nasim Katebi](https://github.com/nkatebi)
 3. [Gari Clifford, DPhil](https://github.com/gariclifford)
