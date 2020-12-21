@@ -93,6 +93,6 @@ y_val_vect =  [y_val["d1"], y_val["d2"], y_val["d3"]]
 
 #Train CNN model using training & validation dataset
 
-model = Model_Multi(X_train, y_train, X_test, y_test, dest_folder+'best_model.h5')
+model = Model_Multi(X_train, y_train, X_test, y_test, root +'best_model.h5')
 model.train_predict(dest_folder)
-print('Trained CNN model saved at {}'.format(dest_folder +'best_model.h5'))
+print('Trained CNN model saved at {}'.format(root +'best_model.h5'))
