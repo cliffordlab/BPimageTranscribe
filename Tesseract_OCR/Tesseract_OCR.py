@@ -93,7 +93,7 @@ if __name__ == '__main__':
     '--saving_dir',
     default='result/',
     type=str,
-    help='The directory to save the results of the Google vision API text detection.')
+    help='The directory to save the results of the Tesseract OCR.')
     parser.add_argument(
     '--data_label',
     default='../Test_case/test_data/labels.csv',
