@@ -1,6 +1,4 @@
-# CNN-based LCD Transcription of Blood Pressure from a Mobile Phone Camera [](https://zenodo.org/badge/DOI/10.5281/zenodo.4383306.svg
-
-)
+# CNN-based LCD Transcription of Blood Pressure from a Mobile Phone Camera [](https://zenodo.org/badge/DOI/10.5281/zenodo.4383306.svg)
 
 This repository contains the source code for the system presented in the research paper titled [CNN-based LCD Transcription of Blood Pressure from a Mobile Phone Camera](https://arxiv.org/abs/2030.12345)submitted to the Frontiers Artificial Intelligence - Medicine and Public Health Sp. Ed on Reimagining Health Systems: leveraging AI/ML for Low- and Middle-Income Countries (LMICs)(in review) 
 
