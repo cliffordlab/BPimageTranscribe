@@ -1,4 +1,5 @@
-# CNN-based LCD Transcription of Blood Pressure from a Mobile Phone Camera [![DOI](https://zenodo.org/badge/315742449.svg)](https://zenodo.org/badge/latestdoi/315742449)
+# CNN-based LCD Transcription of Blood Pressure from a Mobile Phone Camera 
+[![DOI](https://zenodo.org/badge/315742449.svg)](https://zenodo.org/badge/latestdoi/315742449)
 
 
 
