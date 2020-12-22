@@ -37,7 +37,7 @@ def main(args):
         - Image_with_box_dir
 
     Returns:
-        - Google_API_results.csv
+        - GoogleAPIresults.csv
         - Images with detected boxes (if draw_boxes==True )
 
     """
@@ -46,8 +46,8 @@ def main(args):
         os.mkdir(args.saving_dir)
     if args.draw_boxes:
 
-        if not os.path.exists(args.Image_with_Box_directory):
-            os.mkdir(args.Image_with_Box_directory)
+        if not os.path.exists(args.Image_with_box_dir):
+            os.mkdir(args.Image_with_box_dir)
 
 
 
@@ -80,6 +80,7 @@ def main(args):
 
         df['text'].iloc[i]=result
 
+        # saving images with boxes if draw_boxes=True
         if args.draw_boxes:
             image=Image.open(image_filename)
             image  = image.transpose(Image.ROTATE_270)
