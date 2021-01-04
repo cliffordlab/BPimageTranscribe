@@ -10,6 +10,7 @@ Script for helper functions required to transcribe the images
 """
 import numpy as np
 import cv2
+from PIL import Image
 
 def adjust_gamma(image, gamma=1.0):
         """
@@ -57,25 +58,18 @@ def get_lcd(fname):
         eroded=cv2.erode(adt_thresh, kernel)
         #Invert image to find contours in image
         inverse=cv2.bitwise_not(eroded)
-        _,contours, _ = cv2.findContours(inverse.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)   
+        contours, _ = cv2.findContours(inverse.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_NONE)   
         bp_cnt = []
         d=image.copy()  
-        #Keep only those contours that respect chosen aspect_ration and size
         for contour in contours:
             x,y,w,h=cv2.boundingRect(contour)
             cv2.rectangle(d,(x,y),(x+w,y+h),(255,0,0),2)
             aspect_ratio=w/h
             size=w*h
-            if 2.7 <= aspect_ratio <=4.0 and 7000<= size <25000:# and int(aspect_ratio)!=int(prevh):
-                hr_cnt.append(contour)
-                prevh=aspect_ratio
-        
-        
-            elif 0.95<= aspect_ratio<=1.5 and 20000<= size <80000:# and int(aspect_ratio)!=int(prevb):
+            if 0.95<= aspect_ratio<=1.5 and 20000<= size <80000:# and int(aspect_ratio)!=int(prevb):
                 bp_cnt.append(contour)
                 coord=int(str(x)[:2])
                 prevb=aspect_ratio
-            
         if bp_cnt!=[]:
             print(fname)
             cnt2=max(bp_cnt, key=cv2.contourArea)
@@ -86,6 +80,4 @@ def get_lcd(fname):
             frame=inverse[y:y+h, x:x+w]
             mask=cv2.rectangle(frame.copy(), upper_left, bottom_right, (0, 0, 0),-1)
             final_img=frame-mask    
-            w, h=final_img.shape
-
             return final_img
