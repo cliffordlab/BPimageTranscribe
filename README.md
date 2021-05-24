@@ -2,7 +2,7 @@
 [![DOI](https://zenodo.org/badge/315742449.svg)](https://zenodo.org/badge/latestdoi/315742449)
 
 This repository contains the source code for the work in this article:
-[SS Kulkarni, N Katebi, CE Valderrama, P Rohloff, GD Clifford, CNN-based LCD Transcription of Blood Pressure from a Mobile Phone Camera, Front. Artif. Intell., 4, 36, 21 May 2021.](https://doi.org/10.3389/frai.2021.543176) as part of the Medicine and Public Health Special Edition on Reimagining Health Systems: leveraging AI/ML for Low- and Middle-Income Countries.
+[SS Kulkarni, N Katebi, CE Valderrama, P Rohloff, GD Clifford, CNN-based LCD Transcription of Blood Pressure from a Mobile Phone Camera, Front. Artif. Intell., 4, 36, 21 May 2021](https://doi.org/10.3389/frai.2021.543176) as part of the Medicine and Public Health Special Edition on Reimagining Health Systems: leveraging AI/ML for Low- and Middle-Income Countries.
 
 Please cite the above article when using the code in this repository. 
 
