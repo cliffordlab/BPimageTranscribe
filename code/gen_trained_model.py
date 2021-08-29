@@ -20,15 +20,15 @@ import os
 import shutil
 import pandas as pd
 import glob
-from functions import adjust_gamma, gen_lcd, imgs_to_array
-from Model import Model_Multi
-from keras.backend.tensorflow_backend import set_session
+from helper_functions import adjust_gamma, get_lcd, imgs_to_array
+from CNN_Model import Model_Multi
+from tensorflow.python.keras.backend import set_session
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
-session_config = tf.ConfigProto()
+session_config = tf.compat.v1.ConfigProto()
 session_config.gpu_options.visible_device_list = "0"
 session_config.gpu_options.allow_growth = True
-set_session(tf.Session(config=session_config))
+set_session(tf.compat.v1.Session(config=session_config))
 
 
 #Input files (input images in Dataset/data/ and labels.csv)
