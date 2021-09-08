@@ -1,0 +1,8 @@
+.idea/
+        ../.ipynb_checkpoints/
+        ../Test_case/frames_BP/
+        ../Test_case/results/
+        __pycache__/
+        output.pstats
+        program.prof
+        ../profiler.ipynb
