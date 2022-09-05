@@ -37,7 +37,7 @@ src_folder = 'Dataset/data/'
 df = pd.read_csv(root + 'labels.csv', index_col =0)
 
 dest_folder = 'Dataset/training_data/'
-if not os.path.exists(bpf):
+if not os.path.exists(dest_folder):
     os.path.makedirs(dest_folder)
 bpf= dest_folder+'frames_BP/'    
 if os.path.exists(bpf):
@@ -50,11 +50,11 @@ else:
 dict_lst = []
 for fname in glob.glob(src_folder +'*.jpg'):
     preprocessed_img = get_lcd(fname)
-
+    w, h=preprocessed_img.shape
     #Save Systolic and diastolic contours with _SP.jpg and _DP.jpg suffix respectively            
     tag=os.path.basename(fname).split('.')[0]        #Filename Tag for LCD frames
-    cv2.imwrite(bpf + tag+'_SP.jpg', final_img[0:int(h/2),0:w])
-    cv2.imwrite(bpf + tag+'_DP.jpg', final_img[int(h/2):h,0:w])
+    cv2.imwrite(bpf + tag+'_SP.jpg', preprocessed_img[0:int(h/2),0:w])
+    cv2.imwrite(bpf + tag+'_DP.jpg', preprocessed_img[int(h/2):h,0:w])
 
     img_info = df.loc[df['filename'].contains(tag), ['SBP', 'DBP', 'quality']].values()
     #Adding image data into labels file
@@ -87,12 +87,12 @@ X_train = imgs_to_array(ids_train, dest_folder + 'frames_BP/')
 y_train = info_train[['d1', 'd2', 'd3']]
 
 #Convert images into numpy array(X) and labels into list of values(y) for validating the CNN model
-X_val = convert_to_arrays(ids_val, dest_folder + 'frames_BP/')
+X_val = imgs_to_array(ids_val, dest_folder + 'frames_BP/')
 y_val = info_val[['d1', 'd2', 'd3']]
 y_val_vect =  [y_val["d1"], y_val["d2"], y_val["d3"]]
 
 #Train CNN model using training & validation dataset
 
-model = Model_Multi(X_train, y_train, X_test, y_test, root +'best_model.h5')
+model = Model_Multi(X_train, y_train, X_val, y_val, root +'best_model.h5')
 model.train_predict(dest_folder)
 print('Trained CNN model saved at {}'.format(root +'best_model.h5'))
